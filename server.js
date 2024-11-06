@@ -1,18 +1,8 @@
-import http from "http";
+// import http from "http";
+import app from "./src/app.js";
 
 const port = 3000;
 
-const rotas = {
-    "/": "Curso de Node.js",
-    "/livros": "Rota dos livros",
-    "/autores": "Rota autores"
-}
-
-const server = http.createServer((req , res) => {
-    res.writeHead(200, {"Content-Type": "text/plain"});
-    res.end(rotas[req.url]);
-});
-
-server.listen(port,() => {
+app.listen(port,() => {
     console.log("Servidor operando!");
-});
+}); 
